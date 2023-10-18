@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     font-family: Montserrat, Arial, Verdana;
+}
+
+div.mainpanel {
+	margin: 30px 5px 30px 5px;
+}
+
+.btn.btn-default.btn-incorrect {
+	background-color: #ffe5e5;
+	color: #444444;
+}
+
+.btn.btn-incorrect:hover {
+	background-color: #ffc3c3;
+}
+.btn-incorrect:hover, .btn-incorrect:active:hover {
+	background-color: #ffc3c3;
+}
+body.quizsummary {
+	/* background-color: #fbfbfb; */
+	background: url(../../share/webbglight4b.jpg) no-repeat center center fixed;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.jumbotron.customJumbotron {
+	padding: 10px 10px 10px 15px;
+}
+.customJumbotron p {
+	margin: 0px;
+    font-size: 15px;
+    font-weight: 200;
+}
+.breakdown {
+	width: 100%;
+}
+.breakdown td {
+	white-space: nowrap;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+th.breakdownTitle {
+	white-space: nowrap;
+}
+td.breakdownProgress {
+	width: 100%;
+	margin: auto;
+}
+div.breakdownProgress {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 0px;
+	width: 95%;
+}
+td.breakdownNumber {
+	text-align: center;
+	font-weight: bold;
+}
+td.breakdownInfo {
+	
+}
+
+a.actionButton {
+	border: 1px solid #e2e2e2;
+    background-color: #ffffff45;
+    box-shadow: none;
+}
+
+.resourceLinks {
+	font-size: 15px;
+}
+.resourceLinks .heading {
+	font-size: 15px;
+    border-bottom: 1px solid #ececec;
+    font-weight: 700;
+    margin: 0 50px 0 0;
+    padding: 0 10px;
+	
+}

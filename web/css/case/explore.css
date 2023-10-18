@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+
+
+.sectionItem {
+	padding-left: 5px;
+	padding-right: 5px;
+	float:left;
+	width: 300px;
+}
+
+.container {
+
+}
+input.newSectionInput.form-control {
+	color: white;
+	height: 22px;
+	font-size: 15px;
+	box-shadow: none;
+}
+
+div.noGroupAlert {
+	background-color: #bceabc;
+}
+
+
+.form-control.newSectionInput::-webkit-input-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput:-moz-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput::-moz-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput:-ms-input-placeholder { text-align: center; color: #f6e0ca; }
+
+div.panel-heading {
+	padding-bottom: 0px;
+	height: 35px;
+	overflow: hidden;
+}
+
+span.sectionTrash {
+	font-size: 12px; 
+	color: black;
+	cursor: pointer;
+	color: #e0e3e7;
+}span.sectionTrash:hover {
+	color: #ff8187;
+}
+
+
+button.searchTermItem.btn {
+	background-color: #2582cc;
+	text-transform: none;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 230px;	
+}
+
+.searchTermItem.btn.selected {
+	background-color: #9c27b0;
+}
+
+/*.itemDivContainer {
+	width: 235px;
+	overflow: hidden;
+	display: inline;
+}*/
+
+.searchTermItemInput.btn {
+	background-color: #f3e8ff;
+}
+
+.searchTermItemInput .newTermInput {
+	height: 15px;
+	font-size: 12px;
+	width: 200px
+}
+
+
+
+.form-control.newTermInput::-webkit-input-placeholder { text-align: center;}
+.form-control.newTermInput:-moz-placeholder { text-align: center;}
+.form-control.newTermInput::-moz-placeholder { text-align: center;}
+.form-control.newTermInput:-ms-input-placeholder { text-align: center;}
+
+
+.navbar-label {
+	font-size: 24px;
+	color: #666666;
+	display: inline-block; 
+	vertical-align: middle;
+}

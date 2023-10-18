@@ -1,0 +1,34 @@
+<case>
+<case-text>
+Question text here
+
+{question:multipleChoice}
+{question:abnormalities}
+{image:16}
+</case-text>
+	
+<answer-text>
+Answer text here
+
+{answer:multipleChoice}
+{answer:abnormalities}
+
+{image:17}
+</answer-text>
+	
+<settings>
+    <question id="multipleChoice" selections="2" type="choice" wrong-choice-score="0" pass-score="1">
+        <question-text>What is the rhythm?</question-text>
+		<choice>Sinus Rhythm</choice>
+		<choice correct="true" score="+0.25">Atrial Flutter</choice>
+		<choice>Suptraventricular Tachycardia</choice>
+		<choice>Nonspecific Interventricular Conduction Delay</choice>
+        <choice correct="true" missed="-1" score="+1">Atrial Tachycardia</choice>
+	</question>
+    <question id="abnormalities" type="search_term" searchgroups="rhythm,morphology,ischemia"  pass-score="1" wrong-choice-score="0">
+        <question-text>Identify Other Abnormalities</question-text>
+        <answer score="+1">Incomplete Right Bundle Branch Block (RBBB)</answer>
+        <answer score="+1" primary="1" missed="-1">Incomplete Right Bundle Branch Block (RBBB)</answer>
+    </question>
+</settings>
+</case>

@@ -1,0 +1,222 @@
+/* 
+    Document   : css_main
+    Created on : Jun 21, 2013, 7:25:34 AM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@import url(share/fonts/Fonts.css?family=Montserrat);
+
+root { 
+    display: block;
+}
+
+body {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+}
+
+.box1 {
+	border: 2px dashed #EF05C3;
+	/*background-color: #C8C8FF;*/
+	padding: 3px;
+	padding-bottom: 0px;
+
+	background:rgb(168,168,255);
+    background: transparent\9;
+    background:rgba(168,168,255,0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66a8a8ff,endColorstr=#66a8a8ff);
+    zoom: 1;
+}
+.box1:nth-child(n) {
+    filter: none;
+}
+
+.table1 {
+border: 0px;
+border-collapse: collapse;
+}
+
+.table1 td {
+border: 0px;
+text-align: left;
+padding: 2px;
+}
+
+.table1 th {
+background-color: #D6D6FF;
+text-align: left;
+}
+
+input.login {
+	font-size: 16px;
+	border: 1px solid #414FFF;
+	background-color: #F3F1E0;
+	
+}
+input.disabled {
+	background-color: #D3E3FF;
+}
+input.required {
+	border-color: red;
+}
+
+.message {
+	color: red; 
+	font-size: 11px;
+}
+
+body.index {
+	
+	padding: 0px;
+	margin: 0px;
+		background-color: #5080FA;
+	background: url("share/ecgBG2.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+body.exam {
+	padding: 0px;
+	margin: 0px;
+		background-color: #5080FA;
+	background: url("share/webbglight3.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+div.main {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1300px;
+	/*height: 100vh;*/
+
+}
+.footerDiv {
+	width: 640px;
+	margin-top: auto;
+	left: 0;
+	right: 0;
+	bottom: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	font-size: 12px;
+	color: #e22727;
+	border-top: 1px solid #737373;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	
+    background:rgb(51,255,236);
+    background: transparent\9;
+    background:rgba(51,255,236,0.25);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#3f33ffec,endColorstr=#3f33ffec);
+    zoom: 1;
+}
+.div:nth-child(n) {
+    filter: none;
+}
+
+.footerTable {
+	width: 100%;
+}
+.footerTable td.logoTd {
+	border-right: 1px solid #737373;
+	padding-right: 8px;
+}
+
+td.logoTd img.maroon {
+	display: block;
+	width:130px; 
+	height: auto;
+}
+td.logoTd img.grey {
+	display: none;
+}
+
+.footerTable td.textTd {
+	padding-left: 5px;
+}
+
+.action-button {
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 2px 10px;
+	margin: 10px 5px;
+	/*box-shadow: 0 0 0 2px white, 0 0 0 3px #0095FF;*/
+	border: 1px solid #002BFF;
+	border-radius: 3px;
+    background:rgb(131,215,255);
+    background: transparent\9;
+    background:rgba(131,215,255,0.65);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#a583d7ff,endColorstr=#a583d7ff);
+    zoom: 1;
+}
+
+.action-button-grey {
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 2px 10px;
+	margin: 10px 5px;
+	/*box-shadow: 0 0 0 2px white, 0 0 0 3px #0095FF;*/
+	border: 1px solid #002BFF;
+	border-radius: 3px;
+    background:rgb(196,224,238);
+    background: transparent\9;
+    background:rgba(196,224,238,0.65);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#a583d7ff,endColorstr=#a583d7ff);
+    zoom: 1;
+}
+
+.action-button:hover, .action-button:focus {
+	background:rgb(0,243,255);
+    background: transparent\9;
+    background:rgba(0,243,255,0.8);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00f3ff,endColorstr=#cc00f3ff);
+    zoom: 1;
+}
+
+.logincodeDiv {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 2px solid #9065CA;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom: 0px;
+	width: 370px;
+	display: block;
+}
+.logincodeDiv legend {
+	font-weight: bold;
+	text-align: center;
+	color: #33274E;
+}
+.logincodeInput {
+	margin-top: 15px;
+	font-size: 10px;
+}
+.logincodetextDiv {
+	margin-top: 5px;
+}
+.customLink {
+	cursor: pointer; cursor: hand; 
+	color: #2061FF;
+	text-decoration: underline;
+	font-weight: bold;
+}

@@ -1,0 +1,21 @@
+<case>
+<case-text>
+{question:abnormalities}
+{image:16}
+</case-text>
+	
+<answer-text>
+{answer:abnormalities}
+
+Answer text here
+
+{image:17}
+</answer-text>
+	
+<settings>
+    <question id="abnormalities" type="search_term" searchgroups="level1"  pass-score="1" wrong-choice-score="0">
+        <question-text>Identify Abnormalities</question-text>
+        <answer score="+1" primary="1">Incomplete Right Bundle Branch Block (RBBB)</answer>
+    </question>
+</settings>
+</case>

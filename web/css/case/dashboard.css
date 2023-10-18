@@ -1,0 +1,407 @@
+@CHARSET "UTF-8";
+
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+footer {
+  padding: 30px 0;
+}
+
+@import url(../share/fonts/Fonts.css?family=Montserrat);
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+/* ------------PRINT CONFIGURATION ----- */
+@media screen {
+  #printSection {
+      display: none;
+  }
+}
+
+@media print {
+  body * {
+    /* visibility:hidden; */
+  }
+  #printSection, #printSection * {
+    visibility:visible;
+  }
+  #printSection {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+}
+
+.reportIframe {
+	width: 100%;
+	border: 0;
+	height: 80%;
+}
+/* ------------------------------ */
+
+.btn-flat {
+	border: 1px solid #e2e2e2;
+    background-color: #ffffff45;
+    box-shadow: none;
+}
+
+a.navtext {
+}
+.navbar-inverse .navbar-nav>li>a {
+	font-size: 15px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+	padding: 40px 10px 40px 30px;
+	background-color: rgba(255, 255, 255, 0.59);
+}
+
+.levelBox {
+	width: 250px;
+	position: relative;
+	margin: 0 auto 0 auto;
+	margin-top: 20px;
+}
+
+.levelBox .panel-body {
+	min-height: 110px;
+	margin-top: -10px;
+}
+
+.panel-body p {
+	margin: 0 0 10px 0;
+}
+.secondaryText {
+	color: hsl(0, 0%, 73%);
+}
+
+.categoryBox {
+
+}
+.categoryBoxCaption {
+	position: absolute;
+	width: 80%;
+ 	top: 60%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+
+}
+.categoryContainer {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.categoryBox:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+.categoryBoxCaption h3 {
+	color: white;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.16);
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.categoryBoxCaption .notice {
+	color: #f3d2d2;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.12);
+	
+}
+.categoryBoxNotice {
+	position: absolute;
+	width: 60%;
+ 	top: 30%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+.categoryBoxNotice.caption {
+	font-weight: bold;
+ 	color: #ea5454;
+ 	font-size: 18px;
+ 	background-color: rgba(255, 255, 255, 0.48);
+}
+
+@media all and (max-width: 992px) {
+	.levelBox {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.levelRow {
+	}
+}
+
+.jumbotronInstructions p {
+	font-size: 16px;
+}
+div.jumbotron.jumbotronInstructions {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.levelBox .panel-title {
+	font-weight: bold;
+}
+
+.centerLevelBox {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.levelButton {
+	margin-bottom: 8px;
+}
+
+.panel-warning.disabled>.panel-heading {
+	background-color: #f3d6ad;
+}
+.panel.disabled p {
+	color: #b9b9b9;
+}
+.panel.disabled p {
+	color: #b9b9b9;
+}
+.panel-info.disabled>.panel-heading {
+	background-color: #cfa9d6;
+}
+.panel-level2.disabled>.panel-heading {
+	background-color: #a9d6d2;
+}
+.panel-level3.disabled>.panel-heading {
+	background-color: #adccf3;
+}
+.panel-level3>.panel-heading {
+	background-color: #77a1d6;
+}
+.panel-level4.disabled>.panel-heading {
+	background-color: #d3caf7;
+}
+.panel-level4>.panel-heading {
+	background-color: #9b89e2;
+}
+
+.moduleArrowWrapper {
+	position: relative;
+	width: 1px;
+	margin: 0 auto 0 auto;
+}
+
+.moduleArrow {
+	font-size: 120px;
+	font-weight: bold;
+	position: absolute;
+	top: -32px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	color: rgba(0, 90, 255, 0.42)
+}
+
+.levelSpacing {
+	margin-top: 60px;
+}
+
+.levelSpacingSm {
+	margin-top: 10px;
+}
+
+div.panel-heading {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding: 5px;
+	min-height: 42px;
+}
+
+
+.panel-heading.levelA1 {
+	background-color: #4caf50;
+}
+.panel-heading.levelA2 {
+	
+	background-color: #548256;
+}
+.panel-heading.levelB1 {
+	background-color: #9b89e2;
+}
+.panel-heading.levelB2 {
+	background-color: #6f62a5;
+}
+.panel-heading.levelB3 {
+	background-color: #6f62a5;
+}
+.panel-heading.levelC1 {
+	background-color: hsl(214, 100%, 75%);
+}
+.panel-heading.levelC2 {
+	background-color: hsl(214, 77%, 61%);
+}
+.panel-heading.levelD1 {
+	background-color: #e4513a;
+}
+
+.levelOverlayDisabled {
+	
+}
+
+.successOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(219, 255, 230, 0.5);
+  z-index: 100;
+}
+.successIcon {
+	padding-top: 40px;
+	font-size: 100px;
+	color: #67b763;
+	font-weight: bold;
+}
+.achievement {
+	background-color: #6bda92;
+	font-weight: bold;
+	font-size: 13px;
+}
+.achievement.level1 {
+	background-color: #6bda92;
+}
+.achievement.level2 {
+	background-color: #40b96a;
+}
+.achievement.level3 {
+	background-color: #2d884d;
+}
+
+.reportHeader {
+	text-align: center;
+	font-size: 14px;
+	color: grey;
+}
+.reportHeader span{
+	background-color: #daeeff;
+}
+
+.material-icons.achievementIcon {
+	display: inline-flex;
+	font-size: 14px;
+	vertical-align: middle;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-top: -3px;
+}
+
+.achievementBox {
+	background-color: #2196f3;
+	border-color: #2196f3;
+	border-radius: 4px;
+	padding-bottom: 1px;
+	color: white;
+}
+.achievementBox .username {
+	display: inline-div;
+	font-size: 18px;
+	font-family: Montserrat, Arial, Verdana;
+	font-weight: bold;
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+.getAchievementReportWrapper {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	padding-right: 10px;
+}
+
+
+
+.username .material-icons {
+	padding-bottom: 2px;
+}
+
+.achievementList {
+	border-left: 5px solid #64b0ff;
+	margin: 5px 10px 10px 10px;
+	padding: 0 5px 0 5px;
+}
+.achievementItem {
+	padding: 4px 3px 3px 4px;
+	display: inline-block;
+}
+
+
+
+
+.LOBody {
+}
+.LOHeading {
+	font-size: 16px;
+	font-weight: bold;
+	color: #317bec;
+}
+.LOBullets {
+}
+
+
+
+body.background {
+	background-color: #f1f6fa;
+	background: url("../../share/webbglight4b.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+html.background {
+	background-color: #f1f6fa;
+}

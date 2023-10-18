@@ -1,0 +1,30 @@
+/* 
+    Document   : css_main
+    Created on : Jun 21, 2013, 7:25:34 AM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.box1 {
+border: 1px solid #329fd7;
+background-color: #F5F5FF;
+padding: 3px;
+}
+
+.table1 {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+.table1 td {
+border: 1px solid black;
+}
+
+.table1 th {
+background-color: #D6D6FF;
+}

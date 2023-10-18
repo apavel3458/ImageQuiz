@@ -1,0 +1,101 @@
+/* 
+    Document   : case
+    Created on : Jul 17, 2013, 10:49:28 PM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    font-family: sans-serif, Arial;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.caseBody {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+div.imageDiv {
+    display: inline;
+    padding: 5px;
+    text-align: center;
+}
+
+input {
+    border: 1px solid lightblue;
+}
+
+.controlButtons input {
+    border: 1px solid grey;
+    background: #dddddd;
+}
+
+.controlButtons {
+    background-color: #FFF0F0;
+    border-top: 1px solid #FF6666;
+    border-bottom: 1px solid #FF6666;
+    padding: 3px;
+}
+
+div.topBar {
+    font-family: arial, helvetica;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding-top: 3px;
+    background-color: #E6E9F0;
+    border-bottom: 1px solid #598EFF;
+    padding-left: 10px;
+}
+
+/*only when user clicked on a matched answer */
+input.answered {
+    background-color: #EBF6FC;
+}
+/*when answer is grayed out*/
+input.gray {
+    text-align: center;
+    color: #DEDEDE;
+}
+/*all questions within a case have this*/
+input.caseQuestion {
+    width: 250px;
+}
+table.questionTable {
+    display: inline;
+    width: 250px;
+    margin: 1px auto;
+}
+
+img.caseImage {
+    max-height: 800px;
+    width: 100%;
+}
+
+div.answerListDiv {
+    
+    text-align: left;
+    vertical-align: middle;
+    margin: auto;
+    padding: 0px;
+    padding-left: 20px;
+    width: 300px;
+}
+div.answerListDiv li {
+    list-style: none;
+}
+
+.ui-autocomplete {
+        font-size: 10px;
+        max-height: 100px;
+        overflow-y: auto;
+        overflow-x: hidden;
+}

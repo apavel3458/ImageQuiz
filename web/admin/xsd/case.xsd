@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="case-list">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element name="case">
+            <xs:complexType>
+                <xs:attribute name="difficulty" use="required">
+                  <xs:simpleType>
+                      <xs:restriction base="xs:token">
+                              <xs:enumeration value="1"/>
+                              <xs:enumeration value="2"/>
+                              <xs:enumeration value="3"/>
+                              <xs:enumeration value="4"/>
+                              <xs:enumeration value="5"/>
+                      </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:sequence>
+                    <xs:element name="case-text">
+                        <xs:complexType mixed="true">
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="settings">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="answer-text">
+                                    <xs:complexType mixed="true">
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="question">
+                                    <xs:complexType>
+                                      <xs:attribute name="id" type="xs:string" use="required"/>
+                                      <xs:attribute name="type" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:token">
+                                                    <xs:enumeration value="text"/>
+                                                    <xs:enumeration value="multiple_choice"/>
+                                                    <xs:enumeration value="single_choice"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:attribute>
+                                      <xs:attribute name="tag-group" type="xs:string" use="required"/>
+                                      <xs:sequence>
+                                          <xs:element name="option">
+                                              <xs:complexType>
+                                                  <xs:attribute name="name" type="xs:string" use="required"/>
+                                              </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="tags">
+                                              <xs:complexType mixed="true">
+                                              </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="answer">
+                                              <xs:complexType>
+                                                  <xs:attribute name="name" type="xs:string" use="required"/>
+                                                  <xs:attribute name="selected" use="required"/>
+                                                  <xs:attribute name="notselected" use="required"/>
+                                              </xs:complexType>
+                                          </xs:element>
+                                      </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+</xs:schema>
+
+

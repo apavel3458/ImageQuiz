@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <welcome-file-list>
+    <welcome-file/>
+	</welcome-file-list>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	
+	  <listener>
+		<listener-class>
+	            org.imagequiz.util.SessionCounterListener
+	        </listener-class>
+	  </listener>
+    
+    
+   <filter> <!-- Get spring to keep the session open for the whole request, so hibernate's lazy loads work -->
+    <filter-name>hibernateFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+    <init-param>
+         <param-name>sessionFactoryBeanName</param-name>
+         <param-value>sessionFactory</param-value> 
+     </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>hibernateFilter</filter-name>
+    <url-pattern>/*</url-pattern> 
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+        	<param-name>contextConfigLocation</param-name>
+        	<param-value>/WEB-INF/applicationContext.xml</param-value>
+    	</init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- servlet>
+    	<servlet-name>mvc</servlet-name>
+    	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    	<load-on-startup>3</load-on-startup>
+    </servlet-->
+
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <description/>
+        <display-name>UploadServlet</display-name>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>org.imagequiz.web.UploadServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/admin/upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
+    <!-- servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping-->
+    <!-- >servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping-->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>dispatcher</servlet-name>
+    	<url-pattern>*.me</url-pattern>
+    </servlet-mapping>
+    
+    
+    <session-config>
+        <session-timeout>
+            120
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <listener>
+	<listener-class>org.imagequiz.Startup</listener-class>
+    </listener>
+    
+
+    
+   <filter>
+      <filter-name>SecurityFilter</filter-name>
+      <filter-class>org.imagequiz.web.SecurityFilter</filter-class>
+   </filter>
+   <filter-mapping>
+      <filter-name>SecurityFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+   </filter-mapping>
+   
+   <!-- filter>
+      <filter-name>CORSFilter</filter-name>
+      <filter-class>org.imagequiz.web.mvccontrollers.configuration.CORSFilter</filter-class>
+   </filter>
+   <filter-mapping>
+      <filter-name>CORSFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+   </filter-mapping-->
+    
+
+    
+    <!-- enable for data source jdbc connection pool -->
+    <resource-ref>
+        <res-ref-name>imagequiz</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref> 
+    
+    <jsp-config>
+	<taglib>
+		<taglib-uri>/WEB-INF/tld/customJSTL</taglib-uri>
+		<taglib-location>/WEB-INF/tld/customJSTL.tld</taglib-location>
+	</taglib>
+	</jsp-config>
+	
+	<!--  IF YOU WANT TO ONLY HAVE SSL THEN REMOVE BELOW -->
+	<security-constraint>
+    <web-resource-collection>
+    <web-resource-name>Support Both HTTP and HTTPS
+    </web-resource-name>
+    <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <user-data-constraint>
+      <!-- <transport-guarantee>CONFIDENTIAL</transport-guarantee> -->
+    </user-data-constraint>
+	</security-constraint>
+	
+</web-app>

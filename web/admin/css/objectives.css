@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+[v-cloak] {
+  display: none;
+}
+
+body {
+	overflow-y: scroll;
+}
+
+textarea {
+	font-size: 10px;
+}
+
+input {
+	border-radius: 10px;
+	border: none;
+}
+
+div.objectiveContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.objectiveNameField {
+	padding-left: 10px;
+}
+
+table.objTable {
+	margin: 0px auto;
+	width: 700px;
+}
+
+table.objTable td {
+	padding: 1px 6px 1px 6px;
+	text-align: left;
+}
+table.objTable tr:hover td {
+	background-color: #f2ebff;
+	cursor: pointer;
+}
+table.objTable td.objectiveIconTd {
+	border-radius: 0px;
+	padding: 0px;
+}
+
+table.objTable th {
+	text-align: center;
+	border-bottom: 1px solid #d0cfd1;
+	padding: 4px 0px 4px 0px;
+	width: 50px;
+}
+
+td.objectiveCodeTd {
+	width:10%;
+	white-space:nowrap;
+	border-radius: 10px 0px 0px 10px;
+}
+td.objectiveNameTd {
+	width: 90%;
+	border-radius: 0px;
+}
+td.actionsTd {
+	white-space: nowrap;
+	border-radius: 0px 10px 10px 0px;
+}
+table.objTable tr.selected td {
+	background-color: #e4ffe9; !important
+	
+}
+td.contains {
+	font-weight: bold;
+}
+hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.status {
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 10px;
+	font-size: 10px;
+	padding: 0px 4px 0px 4px;
+	color: #4ba935;
+	line-height: 8px;
+	margin-bottom: -3px;
+}
+div.status.error {
+	color: #9c262d;
+}
+.white {
+	color: white;
+}
+
+.addNewDiv, .editDiv {
+	display: inline-block;
+	padding: 10px 40px 8px 40px;
+	background-color: #ddefff;
+	border-radius: 10px;
+}
+div.editDiv {
+	background-color: #ffda95;
+	border-color: #ff0000;
+}
+
+.properties {
+	color: black;
+	font-size: 12px;
+	position: absolute;
+	right:0px;
+	background-color: #eeedff;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.searchbox {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 10px;
+	padding-left: 4px;
+	border-radius: 10px;
+	border: 1px solid #d8d8d8;
+	text-align: left;
+}
+
+.inputContainer {
+	text-align: center;
+}
+
+.objectiveName {
+	/*float:left;
+	width: 80%;*/
+}
+.objectiveCode {
+	/*float:left;
+	width: 20%*/
+}
+
+.orphan {
+	color: red;
+}

@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: Verdana;
+	font-size: 0.7em;
+	
+}
+table.resultTable {
+	border: 1px solid #b4b3b4;
+	border-collapse: collapse;
+}
+table.resultTable th {
+	border: 1px solid #b3b2b4;
+	background-color: #dce0f3;
+	font-size: 1.2em;
+}
+
+table.resultTable td {
+	border: 1px solid #c1c0c2;
+	padding: 3px;
+	vertical-align: top;
+}
+table.resultTable td.firstColumn {
+	width: 150px;
+}
+
+table tr.odd {
+	background-color: #f7f8ff;
+	z-index: 0;
+	position: relative;
+}
+table tr.even {}
+
+div.answerKey {
+	color: blue;
+}
+div.truePositives {
+	color: green;
+}
+div.falsePositives {
+	color: #da000a;
+}
+div.falseNegatives {
+	color: grey;
+}
+div.bold {
+	font-weight:bold;
+}
+.selectedRow {
+	background-color: #d4ffc9;
+}
+
+.resultsGrey {
+	color: #666668;
+}
+
+@media print {
+   body { font-size: 0.6em;}
+   img {display: none;}
+   table.resultTable td.firstColumn {
+	width: 150px;
+	}
+	td.number {
+		width: 0.6em;
+		text-align: center;
+		vertical-align: top;
+	}
+	resultsLink { 
+		display: none;
+	}
+}
+
+.resultsLink {
+	cursor: pointer;
+	color: #949cfc;
+}
+
+table.innerTable {
+	border: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+	margin: 0px;
+	table-layout: fixed;
+	width: 100%;
+}
+table.innerTable td {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	cell-spacing: 0px;
+}
+
+td.number {
+	width: 31px;
+	text-align: center;
+	vertical-align: top;
+	color: #a7a7ad;
+}
+
+table.innerTable td.text {
+	position: relative;
+	z-index: 5;
+}
+.noWrap, table.innerTable td.text {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.barGraph {
+	background-color: #cefbe3;
+	float: left;
+	position: absolute;
+	z-index: -1
+}
+
+.barGraphTP {background-color: #99ddbe;}
+.barGraphFP {background-color: #e5c0c0;}
+.barGraphFN {background-color: #ced0cc;}

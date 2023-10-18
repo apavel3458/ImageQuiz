@@ -1,0 +1,119 @@
+<case-series name="Test Exercise">
+<case>
+    <case-text>
+	64yo gentleman presents to the ER with a 2day history of worsening shortness of breath.  He ran out of medications several days ago.
+        Chest X-ray shows the following:
+	
+	{image:ecg1a.jpg}
+	What is the rhythm?: {rhythm:question}
+	
+	DEMO: Try: Normal Sinus Rhythm 
+	</case-text>
+	
+    <case-text>
+	The results of your investigations are:
+	    {2:results}
+	What treatments would you offer?
+	    {3:question}
+	</case-text>
+	
+	<settings>
+		<answer-text>This is where the text the answers for the case goes (optional)</answer-text>
+		<question id="rhythm" type="text" tag-group="rhythm"/>
+		<question id="axis" type="text" tag-group="axis"/>
+	</settings>
+</case>
+
+<default-values>
+   <investigations>
+		  <inv name="Chest Xray (CXR)" normal="Normal"/>
+		  <inv name="Transthoracic Echocardiogram" normal="Grade I LV, no valvular defects"/>
+		  <inv name="Transesophageal Echocardiogram" normal="Patient declined the test because it's too invasive"/>
+		  <inv name="Complete Blood Count (CBC)">
+		      <inv name="Hemoglobin" normal="123-157" unit="g/L"/>
+		      <inv name="WBC" normal="4-10"/>
+		      <inv name="Platelets" normal="150-400"/>
+		  </inv>
+		  <inv name="Creatinine" normal="70-120"/>
+		  <inv name="Electrolytes">
+		      <inv name="Sodium (Na+)" normal="135-145"/>
+		      <inv name="Chloride (Cl-)" normal="98-106"/>
+		      <inv name="Potassium (K+)" normal="3.5-5"/>
+		      <inv name="Bicarbonate (HCO3)" normal="24-30" unit="mmol/L"/>
+		  </inv>
+		  <inv name="BNP" normal="5-100"/>
+	</investigations>
+	
+	<treatments>
+		  <tx name="Furosemide"/>
+		  <tx name="Fluid and Salt Restriction"/>
+	</treatments>
+</default-values>
+
+
+<tags>
+ <tag-group name="rhythm">
+Normal Sinus Rhythm
+Sinus Tachycardia
+Sinus Bradycardia
+Multifocal Atrial Tachycardia
+Atrial Fibrillation
+Atrial Flutter
+Asystole
+Ventricular Fibrillation
+Ventricular Tachycardia
+Ventricular Escape
+Junctional Escape
+AV Nodal Re-entry Tachycardia (AVNRT)
+AV Reciprocating Tachycardia (AVRT)
+ </tag-group>
+ 
+ <tag-group name="axis">
+Left Axis Deviation (LAD)
+Right Axis Deviation (RAD)
+ </tag-group>
+ 
+  <tag-group name="intervals">
+Long PR
+Short PR
+Wide QRS
+Long QT
+Short QT
+ </tag-group>
+ 
+  <tag-group name="blocks">
+Right Bundle Branch Block
+Left Bundle Branch Block
+Left Anterior Fascicular Block
+Right Anterior Fascicular Block
+ </tag-group>
+ 
+  <tag-group name="ischemic changes">
+Poor R-wave Progression
+Significant Q Wave
+ST Elevation
+ST Depression
+ </tag-group>
+ 
+ <tag-group name="leads">
+ Lead 1
+ Lead 2
+ Lead 3
+ Lead aVR
+ Lead aVL
+ Lead aVF
+ Lead V1
+ Lead V2
+ Lead V3
+ Lead V4
+ Lead V5
+ Lead V6
+ Lead V4R
+ Lead V8
+ Lead V9
+ </tag-group>
+ 
+</tags>
+ 
+ 
+</case-series>

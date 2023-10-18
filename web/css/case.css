@@ -1,0 +1,610 @@
+/* 
+    Document   : case
+    Created on : Jul 17, 2013, 10:49:28 PM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+    Code generator used to generate transparency
+    http://rland.me.uk/cross-browser-alpha-transparent-background-10-2011/
+    http://codepen.io/djmarland/pen/LhDyC
+    
+*/
+
+@import url(../share/fonts/Fonts.css?family=Montserrat);
+
+root { 
+    display: block;
+}
+
+
+
+
+div.commentDiv, div.commentDivShowHide {
+	/*if you change this, also change the div.questionDisabled*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;  
+	text-align: center; 
+	/*---------------------------------------*/
+	
+	background: rgb(0, 255, 31);
+    background: transparent\9;
+    background: rgba(98, 255, 0, 0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cff00e0,endColorstr=#cff00e0);
+    zoom: 1;
+}
+
+div.questionDisabled {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	width: 50%;
+	
+	background:rgb(0, 43, 255);
+    background: transparent\9;
+    background:rgba(0,43,255,0.1);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cff00e0,endColorstr=#cff00e0);
+    zoom: 1;
+}
+
+div.questionDiv:nth-child(n), div.answerDiv:nth-child(n), div.commentDiv:nth-child(n) {
+    filter: none;
+}
+
+.answerSearchtext {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+
+.questionText {
+	border-bottom: 1px dashed #A8A8A8;
+	padding: 4px;
+	font-size: 15px;
+	margin-left: 20px;
+}
+
+
+td.choiceInput, td.choiceList {
+	padding-left: 15px;
+}
+td.choiceText {
+	padding-left: 5px;
+}
+
+div.pointsTally {
+	text-align: center;
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+
+.referenceLink {
+	color: #0e128b;
+	text-decoration: none;
+	border-bottom: 1px solid grey;
+	cursor: pointer;
+}
+
+
+
+div.topBar {
+    font-family: arial, helvetica;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding-top: 3px;
+    background-color: #E6E9F0;
+    border-bottom: 1px solid #598EFF;
+    padding-left: 10px;
+}
+
+/*only when user clicked on a matched answer */
+input.answered {
+    background-color: #EBF6FC;
+}
+/*when answer is grayed out*/
+input.gray {
+    text-align: center;
+    color: #d4938b;
+}
+/*all questions within a case have this*/
+input.caseQuestion {
+    width: 250px;
+}
+input.caseQuestionRadio{
+	
+}
+
+
+
+div.answerListDiv {
+    
+    text-align: left;
+    vertical-align: middle;
+    margin: auto;
+    padding: 0px;
+    padding-left: 20px;
+    width: 300px;
+}
+div.answerListDiv li {
+    list-style: none;
+}
+
+
+
+/*----------new  ------*/
+body.main {
+	padding: 0px;
+	margin: 0px;
+	color: #353535;
+		background-color: #5080FA;
+	background: url("../share/webbglight3.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+div.box1 {
+	border: 1px solid #EF05C3;
+	/*background-image: url("../share/opacity60.png");*/
+	margin-left: auto;
+	margin-right: auto;
+	
+    background:rgb(255,255,255);
+    background: transparent\9;
+    background:rgba(255,255,255,0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);
+    zoom: 1;
+}
+div.box1:nth-child(n) {
+    filter: none;
+}
+
+div.box1heading {
+	text-align: center;
+	font-weight: bold;
+    font-size: 14px;
+    padding: 4px;
+    margin: 0px;
+    color: #505050;
+    
+    background:rgb(240,0,255);
+    background: transparent\9;
+    background:rgba(240,0,255,0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33f000ff,endColorstr=#33f000ff);
+    zoom: 1;
+}
+div.box1content {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-top: 2px;
+}
+div.box2heading {
+	text-align: center;
+	font-weight: bold;
+    font-size: 14px;
+    padding: 4px;
+    margin: 0px;
+    color: #505050;
+	
+	background:rgb(255,102,0);
+    background: transparent\9;
+    background:rgba(255,102,0,0.3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4cff66000,endColorstr=#4cff66000);
+    zoom: 1;
+}
+
+div.box2 {
+	border: 1px solid #e75300;
+	/*background-image: url("../share/opacity60.png");*/
+	margin-left: auto;
+	margin-right: auto;
+	
+    background:rgb(255,255,255);
+    background: transparent\9;
+    background:rgba(255,255,255,0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);
+    zoom: 1;
+}
+div.box2:nth-child(n) {
+    filter: none;
+}
+
+div.contents {
+	color: black;
+}
+
+ul.tagit li {
+	clear:left;
+	font-size: 12px;
+	}
+	
+.ui-effects-wrapper {
+	clear: left;
+}
+
+
+.choiceTable th.instruction {
+	/*background-image: url("../share/opacityPurple60.png");*/
+	color: #a62500;
+	background:rgb(255,102,253);
+    background: transparent\9;
+    background:rgba(255,102,253,0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33ff66fd,endColorstr=#33ff66fd);
+    zoom: 1;
+}
+.choiceTable th.instruction:nth-child(n) {
+    filter: none;
+}
+
+.choiceTable .heading {
+	color: #505050;
+	padding: 1px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.availableBox {
+	/*background-image: url("../share/opacityOrange60.png");*/
+	padding: 5px;
+	vertical-align: top;
+
+    background:rgb(255,87,0);
+    background: transparent\9;
+    background:rgba(255,87,0,0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33ff5700,endColorstr=#33ff5700);
+    zoom: 1;
+}
+
+.availableBox:nth-child(n) {
+    filter: none;
+}
+
+.selectedBox {
+	/*background-image: url("../share/opacityGreen60.png");*/
+	padding: 5px;
+	vertical-align: top;
+
+    background:rgb(60,255,0);
+    background: transparent\9;
+    background:rgba(60,255,0,0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#333cff00,endColorstr=#333cff00);
+    zoom: 1;
+}
+.selectedBox:nth-child(n) {
+    filter: none;
+}
+
+.loginBox {
+	/*background-image: url("../share/opacityOrange60.png");*/
+	border-bottom: 2px solid #00a0fe;
+	padding: 0px;
+	font-size: 14px;
+	height: 23px;
+	font-family: Verdana, sans-serif, Arial;
+	background:rgb(255,228,133);
+    background: transparent\9;
+    background:rgba(255,228,133,0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffe485,endColorstr=#7fffe485);
+    zoom: 1;
+    text-align: left;
+}
+.loginBox:nth-child(n) {
+    filter: none;
+}
+.loginBox a {
+	color: #0c74d6;
+}
+img.loginBoxLogo {
+	position: absolute;
+	width:auto;
+	height: 30px;
+	margin:0px;
+	padding: 0px;
+}
+
+.loginBoxRight {
+	float: right;
+	margin-top: 2px;
+	margin-bottom: auto;
+	margin-right: 10px;
+}
+
+.accTable {
+	text-align: left;
+	width: 90%;
+}
+.accTable th {
+	border-bottom: 1px solid grey;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.accTable .incomlete {
+    background:rgb(0,78,255);
+    background: transparent\9;
+    background:rgba(0,78,255,0.15);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#26004eff,endColorstr=#26004eff);
+    zoom: 1;
+}
+
+.accBackground {
+	border: 1px solid #EF05C3;
+	/*background-color: #ff5700;*/
+	width: 200px;
+	height: 13px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	background:rgb(255,87,0);
+    background: transparent\9;
+    background:rgba(255,87,0,0.7);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2ff5700,endColorstr=#b2ff5700);
+    zoom: 1;
+}
+.accBackground:nth-child(n) {
+    filter: none;
+}
+
+.accForeground {
+	border-right: 1px solid #EF05C3;
+	background-color: #60c4ff;
+	height: 13px;
+	padding: 0px;
+	margin: 0px;
+}
+.accEmpty {
+	background-color: #e6e6e6;
+}
+.accLabel {
+	font-size: 11px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.footerDiv {
+	width: 600px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 10px;
+	color: #9C9C9C;
+	border-top: 1px solid #8b8b8b;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 0px;
+}
+.footerTable td.logoTd {
+	border-right: 1px solid #8b8b8b;
+	padding-right: 5px;
+}
+
+td.logoTd img.maroon {
+	display: none;
+}
+td.logoTd img.grey {
+	display: block;
+	width:130px; 
+	height: auto;
+}
+
+.footerTable td.textTd {
+	padding-left: 5px;
+}
+.footerQueens {
+	opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+div.boxContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 860px;
+	text-align: center;
+}
+
+div.pageTitle {
+	text-align: center; 
+	font-weight: bold; 
+	font-size: 14px; 
+	margin-top: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px solid #8b8b8b;
+}
+/*----------Quiz Intro JSP ----*/
+
+div.quizIntroInstructions {
+	text-align: center; margin-top: 10px; margin-bottom: 10px; line-height: 30px;
+	
+}
+
+
+.ui-widget-content {
+	background: none;
+}
+
+.error {
+	color: #fe1700;
+	font-weight: bold;
+	font-size: 11px;
+}
+.errorInQuestion {
+	color: #fe1700;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+}
+
+.tagit-label {
+	white-space: nowrap;
+}
+body.case ul.tagit li.tagit-choice {
+	background-color: #D0F8FF; !important
+}
+
+.smallFont {
+	font-size: 10px;
+	font-style: italic;
+	color: #bdbdbd;
+}
+
+/*---------- for question answers -------*/
+.answerDiv fieldset {
+	border: 1px solid #FF5F5F;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+.answerDiv fieldset legend {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+table.answerSearchtextTable.answerChoiceTable {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*------------- -------------------------  for question answers----*/
+
+.action-button {
+	background: #2DC16C;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 10px;
+	margin: 10px 5px;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #2DC16C;
+}
+
+.action-button:hover, .action-button:focus {
+	background: #5FF144;
+}
+
+.action-button-generic {
+	font-size: 11px;
+}
+
+.supplementaryText {
+	color: #B7B7B7;
+}
+
+/*.disabled {
+	background-color: #EAF8FF;
+}*/
+
+div.infoIcon {
+	float:left;
+}
+
+img.infoIcon {
+	padding-left: 5px;
+	width: 17px;
+	height: 17px;
+}
+
+.ui-dialog .ui-dialog-content {
+	background-color: #F7EFFF;
+	text-align: left;
+}
+
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.questionAnswerSeparator {
+	border-left: 2px dashed red;
+	border-right: 2px dashed red;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
+	color: red;
+	font-size: 1.5em;
+	background: rgba(0, 255, 78, 0.1);
+}
+
+.qaSeparatorOpen {
+	border-top: 2px dashed red;
+	border-bottom: 0px;
+}
+.qaSeparatorClose {
+	border-bottom: 2px dashed red;
+	border-top: 0px;
+}
+
+.commentParent {
+	border-bottom: 1px solid #B7B7B7;
+
+}
+.commentHead {
+	font-size: 0.7em;
+	font-style: italic;
+	color: grey;
+	padding-top: 5px;
+}
+.commentBody {
+	font-weight: normal;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.commentAdminLink {
+	cursor: pointer;
+	color: blue;
+}
+
+.showOptionsButton {
+	font-size: 8px;
+	text-align: center;
+	border: 3px;
+	border-color: rgb(80, 231, 255);
+	background-color: rgb(223, 251, 255);
+	border-style: double;
+	color: #30b5ce;
+	padding: 2px;
+	margin-left: 240px;
+	margin-top: 0px;
+}
+.showOptionsButton:hover {
+	background-color: rgb(196, 248, 255);
+	cursor: pointer;
+}
+
+
+
+/* AUTOCOMPLETE CSS */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-state-active.ui-button:hover 
+{
+  text-decoration: none;
+  width: 100%;
+  background-color: #c8dffe;
+}
+.ui-menu .ui-menu-item-wrapper {
+	width: 100%;
+	display: block;
+	white-space: nowrap;
+}

@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+
+	.g-recaptcha { 
+		margin-top: 10px;
+	}
+	.alertShorter {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 0px;
+	}

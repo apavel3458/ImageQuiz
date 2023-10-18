@@ -1,0 +1,81 @@
+/* 
+    Document   : admin
+    Created on : Jul 18, 2013, 12:28:19 PM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    font-family: arial;
+    font-size: 13px;
+}
+
+table.exerciseTable {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table.exerciseTable td {
+    border: 1px solid black;
+}
+
+
+
+table.imagetable {
+    border: 1px solid #D8D8D8;
+    padding: 2px;
+}
+table.imagetable td {
+    border: none;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table.admintable th {
+	background-color: #99CCFF;
+	white-space: nowrap;
+}
+table.admintable tr.even {
+	background-color: #CCFFFF;
+}
+table.admintable tr.odd {
+	background-color: white;
+}
+.hover {
+	background-color: yellow;
+}
+td.minimize {
+	white-space: nowrap;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+td.maximize {
+	width: 99%;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.boxBlue {
+	border: 1px solid #81BEF7;
+	background-color: #E0F8F7;
+	padding: 4px;
+}
+
+.box {
+	border: 1px solid #D8D8D8;
+    padding: 2px;
+}
+.error {
+	color: #FF0000;
+}
+.success {
+	color: #0B610B;
+}
+.disabled {
+	color: grey;
+}

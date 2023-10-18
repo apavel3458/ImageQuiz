@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+
+
+.commentParent {
+	border-bottom: 1px solid #B7B7B7;
+
+}
+.commentBox {
+	font-family: Montserrat, Arial, Verdana;
+}
+.commentHead {
+	font-size: 0.7em;
+	font-style: italic;
+	color: grey;
+	padding-top: 5px;
+	
+}
+.commentBody {
+	font-weight: normal;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.commentAdminLink {
+	cursor: pointer;
+	color: blue;
+}
+
+/* ----- COMMENTS CSS ----*/
+.panel.commentBox>.panel-body {
+	background-color: #f2fff2;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center;
+	
+}
+.panel.commentBox>.panel-heading {
+	background-color: #58cc5d;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}

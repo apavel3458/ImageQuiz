@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 3:43:06 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="imagequiz" name="org.imagequiz.model.IQCaseDAO" table="iqcase">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="casetext" type="string">
+      <column length="65535" name="casetext"/>
+    </property>
+    <property name="questionxml" type="string">
+      <column length="65535" name="questionxml"/>
+    </property>
+    <property name="filename" type="string">
+      <column length="30" name="filename" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

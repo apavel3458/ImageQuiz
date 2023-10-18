@@ -1,0 +1,171 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ImageQuiz</title>
+        <link rel="stylesheet" type="text/css" href="../jslib/jquery-ui-1.10.3/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="../main.css">
+        <link rel="stylesheet" type="text/css" href="case.css">
+        <script src="../jslib/jquery-1.10.1.min.js"></script>
+        <script src="../jslib/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+        <script type="text/javascript" language="JavaScript">
+            //add highlight autocomplete partial matches
+            $.ui.autocomplete.prototype._renderItem = function( ul, item){
+            var term = this.term.split(' ').join('|');
+            var re = new RegExp("(" + term + ")", "gi") ;
+            var t = item.label.replace(re,"<b>$1</b>");
+            return $( "<li></li>" )
+               .data( "item.autocomplete", item )
+               .append( "<a>" + t + "</a>" )
+               .appendTo( ul );
+            };
+            
+            
+            $(function() {
+                //ON LOAD...
+                $(".caseQuestion").each(function() {
+                    $(this).addClass("gray");
+                    $(this).val("<Enter Answer>");
+                    $(this).focus(function() {
+                        $(this).removeClass("gray");
+                        $(this).removeClass("answered");
+                        $(this).val("");
+                    });
+                    $(this).keydown( function() {
+                        $(this).removeClass("answered");
+                    })
+                })
+            var tagGroups = {};
+            
+                tagGroups["chest-xray-signs"] = [
+                
+                  "Diaphragm elevation R-side",
+              
+                  "Diaphragm elevation L-side",
+              
+                  "Pleural Effusion R-side",
+              
+                  "Pleural Effusion L-side",
+              
+                  "Hilar adenopathy R-side",
+              
+                  "Hilar adenopathy L-side",
+               ""];
+        
+                tagGroups["chest-xray-diagnosis"] = [
+                
+                  "Heart failure",
+              
+                  "Cardiogenic Pulmonary Edema",
+              
+                  "Non-cardiogenic pulmonary edema",
+              
+                  "Pneumonia Lobar",
+              
+                  "Pneumonia Interstitial",
+              
+                  "Pneumonia Aspiration",
+              
+                  "Pneumonia Diffuse",
+              
+                  "Tuberculosis",
+              
+                  "Pulmonary Hemorrhage",
+              
+                  "Hemothorax",
+              
+                  "Pneumothorax",
+              
+                  "Hydropneumothorax",
+              
+                  "Interstitial Pulmonary Fibrosis",
+               ""];
+        
+        
+                 $("#q:1").autocomplete({
+                     source: tagGroups["chest-xray-signs"],
+                     minLength: 1,
+                     select: function(event, ui) { updateAnswerFromAutofill(event, ui); },
+                     response: function(event, ui) {
+                                    if (ui.content.length === 0) {
+                                        ui.content.push({ label: "No search results - try fewer letters", value: "null" });
+                                    }
+                               }
+                 });
+           
+        
+                 $("#q:2").autocomplete({
+                     source: tagGroups["chest-xray-diagnosis"],
+                     minLength: 1,
+                     select: function(event, ui) { updateAnswerFromAutofill(event, ui); },
+                     response: function(event, ui) {
+                                    if (ui.content.length === 0) {
+                                        ui.content.push({ label: "No search results - try fewer letters", value: "null" });
+                                    }
+                               }
+                 });
+           
+        
+            });
+            function updateAnswerFromAutofill(event, ui) {
+                if (ui.item.value == "null") {
+                    ui.item.value = "";
+                    return false;
+                }
+                var inputField = event.target;
+                $(inputField).addClass("answered");
+                //add row to table
+                var tableField = $(inputField).parent("table.questionTable");
+                alert(tableField);
+            }
+            function refreshForm() {
+                document.location.href = 'case.do';
+            }
+            function submitForm(direction) {
+                $("#action").val(direction);
+                $("#caseForm").submit();
+            }
+        </script>
+    </head>
+    <body>
+        <div style="text-align: center;">
+        <form name="caseForm" id="caseForm" method="POST" action="case.do">
+        <div class="topBar">
+            Case 1 - Testcase.  Question: 1 out of 2
+        </div>
+        <div class="caseBody">
+            <br>
+	64yo gentleman presents to the family doctors office with a 3 month history of worsening shortness of breath, hemoptysis, weight loss.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chest X-ray shows the following:<br>
+	<br>
+	<div class="imageDiv"><img src="../image?getfile=pneumoniapa.jpg" style="max-height: 600px; max-width: 600px;"></div> <div class="imageDiv"><img src="../image?getfile=pneumonialat.jpg" style="max-height: 600px; max-width: 600px;"></div><br>
+	Please indicate chest xray findings:<br>
+	<div style="border: 1px solid black; text-align: center;"><table id='t-1' class='questionTable' style="display: inline;"><tr><td><input type="text" id="q-1" class="caseQuestion" name="q-1"></td></tr></table></div><br>
+	Please indicate diagnosis:<br>
+        a<div style="margin: 0px; padding: 0px; width: 260px; display: inline;">
+            <li><input type="text" id="q-2" class="caseQuestion" name="q-2"></li>
+            <li><input type="text" id="q-2" class="caseQuestion" name="q-2"></li>
+        </div>b
+        </div>
+        <br>
+	
+        
+        </div>
+        
+        <div class="controlButtons" style="text-align: center;">
+            <input type="hidden" name="action" id="action" value="refresh">
+            
+            <input type="button" value="Quit" onclick="document.location.href = '../'">
+            <input type="button" value="Refresh" onclick="refreshForm()">
+            <input type="button" value="Previous Question" onclick="submitForm('previous')">
+            <input type="button" value="Next Question" onclick="submitForm('next')">
+        </div>
+        </form>
+    </body>
+</html>

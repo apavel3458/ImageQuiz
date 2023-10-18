@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+	font-family: Montserrat, Verdana, Arial;
+	font-size: 12px;
+}
+.btnFlat {
+	border: 1px solid #e2e2e2;
+    background-color: #ffffff45;
+    box-shadow: none;
+}
+
+.tagPerformance {
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 95%;
+	height: 8px;
+}
+
+table.tagTable tr td {
+	white-space: nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: middle;
+}
+table.tagTable tr th {
+	white-space: nowrap;
+}
+.prefix {
+	color: #c77676;
+}
+
+.greyBackground {
+	background-color: #f7f7f7;
+}
+.urlName {
+	
+}
+.urlUrl {
+	
+}

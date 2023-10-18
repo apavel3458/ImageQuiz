@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   	<context:component-scan base-package="org.imagequiz.web.mvccontrollers" />
+	<context:annotation-config />
+	  <!-- So classes/functions with @Transactional get a hibernate txn -->
+  	<tx:annotation-driven />
+	
+	<bean 
+	class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+
+  <!-- The singleton hibernate session factory -->
+  <bean id="sessionFactory" scope="singleton"
+    class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+  </bean>
+
+  <!-- Spring's hibernate transaction manager, in charge of making hibernate sessions/txns -->
+  <bean id="transactionManager"
+    class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  
+  <!-- The singleton business services class, to be given to the actions -->
+  <bean id="IQDataSource" class="org.imagequiz.dao.IQDataSource" scope="singleton">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+    
+  <bean name="/admin/admin" class="org.imagequiz.web.AdminAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <bean name="/admin/exam" class="org.imagequiz.web.AdminExamAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+    <bean name="/admin/case" class="org.imagequiz.web.AdminCaseAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <!-- bean name="/admin/searchterm" class="org.imagequiz.web.AdminAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean-->
+  
+  <bean name="/user" class="org.imagequiz.web.UserAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <bean name="/admin/images" class="org.imagequiz.web.ImageAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  <bean name="/surveillance" class="org.imagequiz.web.SurveillanceAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  <bean name="/case/case" class="org.imagequiz.web.CaseAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  <bean name="/case/dashboard" class="org.imagequiz.web.Dashboard">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+    <bean name="/case/practice" class="org.imagequiz.web.PracticeAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <bean name="/exam/exam" class="org.imagequiz.web.ExamAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <bean name="/admin/results" class="org.imagequiz.web.ResultsAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+  <bean name="/admin/searchterm" class="org.imagequiz.web.AdminSearchTermAction">
+     <property name="iQDataSource"><ref bean="IQDataSource"/></property>
+  </bean>
+  
+ 
+</beans>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"><hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
+    <property name="hibernate.connection.characterEncoding">utf8</property> 
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/imagequiz?zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true&amp;useSSL=false</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">liyi</property>
+    <property name="hibernate.show_sql">false</property>
+    <!-- property name="hibernate.current_session_context_class">thread</property-->
+    <property name="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</property>
+    <property name="hibernate.generate_statistics">false</property>
+    <!--property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property-->
+    <!-- this is for the connection pool c3p0, also check c3p0.properties in root of classpath -->
+    <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+    <!-- <property name="hibernate.connection.release_mode">after_transaction</property> -->
+    <property name="hibernate.c3p0.validate">true</property>
+	<!-- C3p0 -->
+	<property name="hibernate.c3p0.acquire_increment">1</property>
+	<property name="hibernate.c3p0.idle_test_period">30</property>
+	<property name="hibernate.c3p0.timeout">40</property>
+	<property name="hibernate.c3p0.max_size">25</property>
+	<property name="hibernate.c3p0.min_size">2</property>
+	<property name="hibernate.c3p0.max_statement">500</property>
+	<property name="hibernate.c3p0.testConnectionOnCheckin">false</property>
+	<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+	<property name="hibernate.c3p0.preferredTestQuery">select 1</property>
+    
+    
+    <!-- no "connection.pool_size" entry! -->
+    <!--mapping class="" file="" jar="" package="" resource="org/imagequiz/dao/IQCase.hbm.xml"/-->
+    <mapping class="org.imagequiz.model.IQCase" />
+    <mapping class="org.imagequiz.model.IQExercise" />
+    <mapping class="org.imagequiz.model.IQExerciseCaseLink" />
+    <mapping class="org.imagequiz.model.IQImage" />
+    <mapping class="org.imagequiz.model.IQCaseTag" />
+    <mapping class="org.imagequiz.model.question.IQSearchTermGroup" />
+    <mapping class="org.imagequiz.model.user.IQUser" />
+    <mapping class="org.imagequiz.model.user.IQUserGroup" />
+    <mapping class="org.imagequiz.model.user.IQPermission" />
+    <mapping class="org.imagequiz.model.user.IQUserAchievement"/>
+    <mapping class="org.imagequiz.model.user.IQCaseCompleted"/>
+    <mapping class="org.imagequiz.model.user.IQUserQuiz"/>
+    <mapping class="org.imagequiz.model.user.IQUserQuizHelper"/>
+    <mapping class="org.imagequiz.model.user.IQUserQuizPerformance"/>
+    <mapping class="org.imagequiz.model.IQExam"/>
+    <mapping class="org.imagequiz.model.IQCaseComment"/>
+    <mapping class="org.imagequiz.model.IQReference"/>
+    <mapping class="org.imagequiz.model.IQSetting"/>
+    <mapping class="org.imagequiz.model.question.IQQuestion"/>
+    <mapping class="org.imagequiz.model.question.IQQuestionSearchTerm"/>
+    <mapping class="org.imagequiz.model.question.IQQuestionChoice"/>
+    <mapping class="org.imagequiz.model.question.IQQuestionText"/>
+    <mapping class="org.imagequiz.model.question.IQAnswerChoice"/>
+    <mapping class="org.imagequiz.model.question.IQAnswerSearchTerm"/>
+    <mapping class="org.imagequiz.model.question.IQAnswerSearchTermLine"/>
+    <mapping class="org.imagequiz.model.question.IQAnswerSearchTermWrapper"/>
+    <mapping class="org.imagequiz.model.question.IQSearchTermGroup"/>
+    <mapping class="org.imagequiz.model.question.IQSearchTermSection"/>
+    <mapping class="org.imagequiz.model.caseutil.IQCaseRevision"/>
+    <mapping class="org.imagequiz.model.caseutil.IQCaseObjective"/>
+    <mapping class="org.imagequiz.model.caseutil.IQAuthor"/>
+    <mapping class="org.imagequiz.model.question.IQCaseAnswer"/>
+    
+  </session-factory>
+</hibernate-configuration>

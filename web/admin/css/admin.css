@@ -1,0 +1,192 @@
+/* 
+    Document   : admin
+    Created on : Jul 18, 2013, 12:28:19 PM
+    Author     : apavel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body.admin {
+		padding: 0px;
+		padding-bottom: 100px;
+		
+		margin: 0px;
+		text-align: center;
+		color: #353535;
+			background-color: #5080FA;
+		background: url("../../share/webbglight4b.jpg") no-repeat center center fixed; 
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	     background-size: cover;
+	     
+	     font-family: Helvetica, Arial, sans-serif;
+	     font-size: 14px;
+}	
+
+input {
+	text-align: center;
+}
+
+textarea {
+	border: 1px solid #eaeaea;
+	padding: 5px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+div.panel-body {
+	padding: 10px 15px;
+}
+
+
+
+div.adminBox {
+    margin: 20px auto;
+    text-align: left;
+    padding-bottom: 5px;
+}
+div.adminBox .panel-heading {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+div.adminBox .panel-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+div.pageTitle {
+	font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #ffc3c3;
+    font-weight: bold;
+}
+
+table.adminTable {
+	font-size: 16px;
+	width: 100%;
+	margin-top: 5px;
+}
+table.adminTable tr.pointer td {
+	cursor: pointer;
+}
+table.adminTable th {
+	text-align: center;
+	white-space: nowrap;
+	font-size: 12px;
+	padding: 0px 4px;
+}
+table.adminTable td {
+	padding: 0px 8px;
+}
+table.adminTable td.actions {
+	white-space: nowrap;
+	padding: 0px 2px;
+}
+table.adminTable td.number {
+	text-align: center;
+	white-space: nowrap;
+}
+table.adminTable td.maximize {
+	width: 90%;
+}
+.actionButton.btn, input.actionButton {
+	border: 1px solid #e2e2e2;
+    background-color: #ffffff45;
+    box-shadow: none;
+}
+
+tr.even {
+	background-color: #f1f1f1;
+}
+tr.odd {
+}
+tr.active {
+	background-color: #e8ffd3;
+}
+tr.inactive {
+}
+table.adminTable.hoverHighlight tr:hover {
+	background-color: #00ffff0a;
+}
+
+.btn.btn-align {
+	margin-top: -3px;
+}
+
+.menuInput {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+.menuTitle {
+	color: grey;
+}
+.menuInput select {
+	padding: 0px 5px;
+}
+
+.dropdown-menu-center {
+	transform: translate(-50%, 0);
+}
+
+.panelGrey .panel-heading {
+	background-color: #7570c1;
+	color: white;
+}
+.btnGrey {
+	background-color: #e4e4e4;
+}
+
+table.simpletable {
+	
+}
+table.simpletable th {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+table.simpletable td {
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: left;
+}
+
+.importantRow {
+	background-color: #eaeaea;
+}
+.examOptionInstructions {
+	color: grey; 
+	font-size: 10px;
+	text-align: left;
+}
+.authorSearchWindow {
+	position: absolute;
+	background-color: #ffffff;
+	border: 1px solid #c7e3ff;
+	border-radius: 4px;
+	padding: 4px 10px;
+	text-align: left;
+	box-shadow: rgb(136, 136, 136) 10px 10px 30px;
+	z-index: 2000;
+}
+.authorSearchWindow div:hover {
+	background-color: #b8dbff;
+	color: blue;
+}
+.authorSearchWindow div {
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 0px 5px;
+}
+.col-centered {
+	float: none !important; 
+	margin: 0 auto;
+}
+
+

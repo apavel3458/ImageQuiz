@@ -1,0 +1,159 @@
+<case-series name="Test Exercise">
+<case>
+    <case-text>
+	64yo gentleman presents to the ER with a 2day history of worsening shortness of breath.  He ran out of medications several days ago.
+        Chest X-ray shows the following:
+	
+	{image:effusion.jpg} {image:effusionlat.jpg}
+	List investigations you would perform: {2:question}
+	
+	DEMO: Try: cardiomegaly, prev sternotomy, pleural effusion R, pleural effusion L.  
+	</case-text>
+	
+    <case-text>
+	The results of your investigations are:
+	    {2:results}
+	What treatments would you offer?
+	    {3:question}
+	</case-text>
+	
+    <case-text>
+	
+	
+	</case-text>
+	
+	<settings>
+		<answer-text>This is where the text the answers the case goes (optional)</answer-text>
+		
+		<question id="1" type="text" tag-group="chest-xray-signs"/>
+		<question id="2" type="text"/>
+		
+		<investigations id="3">
+		   <inv name="WBC" value="13" ordered="0" notordered="0"/>
+		   <inv name="Electrolytes" ordered="+3" notordered="-2"/>
+		   <inv name="Potassium" value="5.3"/>
+		   <inv name="BNP" value="600" ordered="+3" notordered="0"/>
+		</investigations>
+		<treatments id="4">
+		   <tx name="Furosemide" ordered="+3" notordered="0"/>
+		   <tx name="Fluid and Salt Restriction" ordered="+3" notordered="0"/>
+		   <tx name="Bisoprolol" ordered="+1" notordered="0"/>
+		</treatments>
+	</settings>
+</case>
+
+<default-values>
+   <investigations>
+		  <inv name="Chest Xray (CXR)" normal="Normal"/>
+		  <inv name="Transthoracic Echocardiogram" normal="Grade I LV, no valvular defects"/>
+		  <inv name="Transesophageal Echocardiogram" normal="Patient declined the test because it's too invasive"/>
+		  <inv name="Complete Blood Count (CBC)">
+		      <inv name="Hemoglobin" normal="123-157" unit="g/L"/>
+		      <inv name="WBC" normal="4-10"/>
+		      <inv name="Platelets" normal="150-400"/>
+		  </inv>
+		  <inv name="Creatinine" normal="70-120"/>
+		  <inv name="Electrolytes">
+		      <inv name="Sodium (Na+)" normal="135-145"/>
+		      <inv name="Chloride (Cl-)" normal="98-106"/>
+		      <inv name="Potassium (K+)" normal="3.5-5"/>
+		      <inv name="Bicarbonate (HCO3)" normal="24-30" unit="mmol/L"/>
+		  </inv>
+		  <inv name="BNP" normal="5-100"/>
+	</investigations>
+	
+	<treatments>
+		  <tx name="Furosemide"/>
+		  <tx name="Fluid and Salt Restriction"/>
+	</treatments>
+</default-values>
+
+
+<tags>
+ <tag-group name="chest-xray-signs">
+Silhouette sign
+Air Bronchogram
+Solidary Pulmonary Nodule
+Multiple Pulmonary Nodules
+Anterior Mediastinal Mass
+Atelectasis
+Endobronchial lesion (mucous plug/tumor)
+Compression (pleural effusion/mass)
+Diaphragm elevation R-side
+Diaphragm elevation L-side
+Pleural Effusion R-side
+Pleural Effusion L-side
+Hilar adenopathy R-side
+Hilar adenopathy L-side
+lobular Heart Shadow
+Fat Pad sign
+Pneumomediastinum
+Pneumothorax
+Tension Pneumothorax
+Hemothorax
+Rotated Film
+Under-penetrated Film
+Over-penetrated Film
+Poor Inspiration Film
+Hiatal Hernia
+Cavitatary Lesion
+Previous Sternotomy
+Pacemaker In Place
+
+Consolidation
+Mediastinal shift
+Deep sulcus sign
+Ground Glass Opacification
+
+
+Hyperinflation
+Flattening of diaphragms
+Increased Retrosternal Space
+Bullae
+
+Westermark's sign
+Hampton's hump
+
+Trauma
+Rib Fracture
+Multiple Rib Fractures
+
+Kerley B Lines
+Septal lines
+Peribronchial cuffing
+Bat wing pattern
+Cardiac size increase (Cardiomegaly)
+ </tag-group>
+ 
+ <tag-group name="chest-xray-location">
+ Right Upper Lobe
+ Right Middle Lobe
+ Right Lower Lobe
+ Left Upper Lobe
+ Left Lower Lobe
+ </tag-group>
+ 
+  <tag-group name="chest-xray-diagnosis">
+Heart Failure
+Cardiogenic Pulmonary Edema
+Non-cardiogenic pulmonary edema
+Pneumonia Lobar
+Pneumonia Interstitial
+Pneumonia Aspiration
+Pneumonia Diffuse
+Tuberculosis
+Pulmonary Hemorrhage
+Hemothorax
+Pneumothorax
+Hydropneumothorax
+Interstitial Pulmonary Fibrosis
+Pericardial Effusion
+Pneumomediastinum
+Diaphragmatic Hernia
+Chronic Obstructive Pulmonary Disorder (COPD)
+Emphysema
+ </tag-group>
+</tags>
+ 
+ 
+</case-series>

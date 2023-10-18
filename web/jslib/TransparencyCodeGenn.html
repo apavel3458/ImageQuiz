@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+ <style>
+   body {
+    background: #444;
+      color: #eee;
+    padding: 4px 24px 0;
+      font-family: Arial, sans-serif;
+  }
+  h1 {
+      font-weight: normal;
+    padding-right: 124px;
+    min-height: 75px;
+  }
+
+  #generator {
+      position: relative;
+  }
+
+  #generator .entry {
+      display: block;
+    margin-bottom: 8px;
+    overflow: auto;
+  }
+label {
+  width: 100px;
+  float: left;
+}
+input {
+  padding: 4px;
+}
+
+
+  #generator textarea {
+      width: 100%;
+      height: 190px;
+      display: block;
+  }
+  
+  #generator #sample1 {
+      top: 0;
+      right: 0;
+  }
+  
+  #generator #sample2 {
+      top: 25px;
+      right: 25px;
+  }
+  
+  #generator .sample {
+      position: absolute;
+      display: block;
+      height: 50px;
+      width: 50px;
+  }
+
+textarea {
+  margin-top: 8px;
+}
+</style>
+
+<script type="text/javascript">
+var ALPHA = function(selector) {
+    this.container = $(selector);
+    this.addListeners();
+    this.generateCSS('ff66000',0.3);
+}
+
+ALPHA.prototype = {
+    container : null,
+    addListeners : function() {
+        var self = this;
+        this.container.find('button').click(function() {
+        
+            var color = self.container.find('#color').val();
+            var opacity = self.container.find('#opacity').val();
+            if (!self.isValidColor(color)) {
+                alert('Color (' + color + ') is not a valid. Please enter a six digit hex value');
+                return false;
+            }
+            if (!self.isValidOpacity(opacity)) {
+                alert('Opacity Value (' + opacity + ') must be a decimal between 0 and 1');
+                return false;
+            }
+            self.generateCSS(color, opacity);
+        });
+    },
+    generateCSS : function(color, opacity) {
+        var rgb = this.hexToRgb(color);
+        var hexop = this.opacityToHex(opacity);
+		var css = '.div {\n\
+    background:rgb(' + rgb + ');\n\
+    background: transparent\\9;\n\
+    background:rgba(' + rgb + ',' + opacity + ');\n\
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#' + hexop + color + ',endColorstr=#' + hexop + color + ');\n\
+    zoom: 1;\n\
+}\n\
+.div:nth-child(n) {\n\
+    filter: none;\n\
+}';
+        this.container.find('textarea').val(css);
+        this.updateSample('rgba(' + rgb + ',' + opacity + ')');
+    },
+    isValidColor : function(color) {
+        var strPattern = /^([0-9a-f]){6}$/i;
+        return strPattern.test(color);
+    },
+    isValidOpacity : function(opacity) {
+        return (!isNaN(opacity-0) && opacity >= 0 && opacity <= 1);
+    },
+    updateSample : function(rgba) {
+        this.container.find('.sample').css('background',rgba);
+    },
+    hexToRgb : function(hex) {
+        var r = parseInt(hex.substring(0,2),16);
+        var g = parseInt(hex.substring(2,4),16);
+        var b = parseInt(hex.substring(4,6),16);
+        return r + ',' + g + ',' + b;
+    },
+    opacityToHex : function(opacity) {
+        var num = opacity * 255;
+        return Math.floor(num).toString(16);
+    }
+    
+}
+
+
+$(document).ready(function() {
+    new ALPHA('#generator');
+});
+</script>
+</head>
+<body>
+ 
+ <div id="container">
+    <section id="generator">
+        <h1>Generate alpha-transparent background</h1>
+        <div class="sample" id="sample1"></div><div class="sample" id="sample2"></div>
+        <div class="entry">
+        <label for="color">Colour: #</label>
+        <input id="color" value="ff6600" /></div>
+        <div class="entry">
+        <label for="opacity">Opacity: </label>
+        <input id="opacity" value="0.3" /></div>
+        <button>Generate</button>
+        <textarea id="result"></textarea>
+    </section>
+  </div> <!--! end of #container -->
+  
+  </body>
+  
+  
+</html>

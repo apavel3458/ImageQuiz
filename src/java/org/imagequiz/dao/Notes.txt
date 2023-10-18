@@ -1,0 +1,72 @@
+What I learned:
+Hibernate/JPA helps manage objects that are stored in the database.
+1.  When you create an object and going to store in DB
+You can call save() or saveOrUpdate().  Since this object does not have an ID, it will call "save".  
+"update()" will throw exception.
+- Once saved, the object will "persist", which means that any changes made to the object will be saved in DB
+- Eventually hibernate will flush() all data to synchronize this with the database (or you can do this manually after
+  making a change to DB.  (will ensure all other sessions have the most up-to-date information.
+  flush() will also cascade all changes to other related objects
+-  You can call update(), which will pull out the state from the DB and update your object (or all objects) with
+   stuff from DB.  Manual changes that are made to the object will be overwritten. 
+- Overall the object is "persisted", or "managed" or "bound" (all mean same things).
+
+2.  Often one must all evict(), which removes the object binding from the database.  The object
+  is now free to change without having any effects on the DB.  However, fetch=LAZY will no 
+  longer work (throw lazy exception) because the object is no longer bound. 
+
+3. To re-bind the object to hibernate/DB, you must call merge().
+  merge() will work if there the object ID is set (in theory, also if it is not set, but I guess that's dangerous???)
+  merge function will find the object in DB, and return it, keeping passed object evicted.  i.e.
+  X = session.merge(Y)  [Y will not be bound, but X will be a copy of Y that is bound)
+  
+4.  Calling persist() does same thing as merge(), except it binds the passed object.
+   I think it also updates the object in DB with new object... but i'm not sure.
+   session.persist(Y) [causes Y to bind]
+
+
+══════════════╦═══════════════════════════════╦════════════════════════════════╗
+║    METHOD    ║            TRANSIENT          ║            DETACHED            ║
+╠══════════════╬═══════════════════════════════╬════════════════════════════════╣
+║              ║       sets id if doesn't      ║   sets new id even if object   ║
+║    save()    ║     exist, persists to db,    ║    already has it, persists    ║
+║              ║    returns attached object    ║ to DB, returns attached object ║][	
+╠══════════════╬═══════════════════════════════╬════════════════════════════════╣
+║              ║       sets id on object       ║             throws             ║
+║   persist()  ║     persists object to DB     ║       PersistenceException     ║- the object will be "managed"
+║              ║                               ║                                ║- future changes = changes to DB
+╠══════════════╬═══════════════════════════════╬════════════════════════════════╣
+║              ║                               ║                                ║
+║   update()   ║           Exception           ║     persists and reattaches    ║
+║              ║                               ║                                ║
+╠══════════════╬═══════════════════════════════╬════════════════════════════════╣
+║              ║  copy the state of object in  ║    copy the state of obj in    ║- the object will NOT be "managed
+║    merge()   ║     DB, doesn't attach it,    ║      DB, doesn't attach it,    ║- merge() creates new instance
+║              ║    returns attached object    ║     returns attached object    ║makes it managed, and the old
+╠══════════════╬═══════════════════════════════╬════════════════════════════════╣passed instance will remain detached 
+║              ║                               ║                                ║(future changes not tracked unless you call "merge()" again.
+║saveOrUpdate()║           as save()           ║            as update()         ║
+║              ║                               ║                         
+refresh()  - Refresh state of instance from DB, overwriting changes in the entity
+
+
+Transient - an object is transient if it has just been instantiated using the new operator, and it is not associated with a Hibernate Session. It has no persistent representation in the database and no identifier value has been assigned. Transient instances will be destroyed by the garbage collector if the application does not hold a reference anymore. Use the Hibernate Session to make an object persistent (and let Hibernate take care of the SQL statements that need to be executed for this transition).
+Persistent - a persistent instance has a representation in the database and an identifier value. It might just have been saved or loaded, however, it is by definition in the scope of a Session. Hibernate will detect any changes made to an object in persistent state and synchronize the state with the database when the unit of work completes. Developers do not execute manual UPDATE statements, or DELETE statements when an object should be made transient.
+Detached - a detached instance is an object that has been persistent, but its Session has been closed. The reference to the object is still valid, of course, and the detached instance might even be modified in this state. A detached instance can be reattached to a new Session at a later point in time, making it (and all the modifications) persistent again. This feature enables a programming model for long running units of work that require user think-time. We call them application transactions, i.e., a unit of work from the point of view of the user.
+
+
+http://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/objectstate.html
+
+
+ManyToMany bidirection:
+The owner of the group is the one that has the table definitions
+The slave of the group is the one with mappedBy clause. 
+
+When deleting ManyToMany entities, the owner delete will take link table associations with it.  However, 
+slave delete will not (must be done manually)
+
+Cascades
+Cascade defines the operations performed on the current item, which will be cascaded to associated items. 
+Default = cascade.NONE
+
+Default Fetch = LAZY (preferred)

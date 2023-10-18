@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.modal-iframe {
+	width: 100%;
+	height: 100%;
+	border: 0px;
+}
+.modal-body {
+	padding: 5px;
+}
+.modal-title {
+	/*border-bottom: 1px solid #c9c8ca;*/
+}
+
+.loaderBg {
+    background:url(../css/loader.gif) center center no-repeat;
+}
+
+.caseError {
+	font-weight: bold;
+	margin: 3px;
+}

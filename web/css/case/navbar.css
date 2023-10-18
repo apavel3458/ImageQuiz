@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+a.navtext {
+}
+.navbar-inverse .navbar-nav>li>a {
+	font-size: 15px;
+}
+.navbar {
+	margin-bottom: 5px;
+}
+
+.navbar-nav>li>a {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+.navbar-nav>li>a.userText {
+	color: #ffd8d8;
+	text-align: right;
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space: nowrap;
+	width: 190px;
+}

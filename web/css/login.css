@@ -1,0 +1,160 @@
+@CHARSET "UTF-8";
+
+    body {
+    	background-color: #f5f5f5;
+    }
+    
+    
+    body.background {
+	background: url("../share/webbglight4b.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+
+}
+    
+    
+    .carousel-inner > .item > img {
+    	height: 600px;
+    	object-fit: cover;
+		overflow: hidden;
+    }
+    
+    
+    
+    .carousel .item {
+    	height: 600px;
+    }
+    .carousel {
+    	height: 600px;
+    	margin-bottom: 35px;
+    }
+    .carousel-caption {
+    	left: 5%;
+    	right: 40%;
+    	font-size: 20px;
+    	text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    .carousel-caption1 {
+    	padding-bottom: 90px;
+    }
+    .carousel-caption2 {
+    	padding-bottom: 70px;
+    	left:10%;
+    	right: 35%;
+    }
+    .carousel-caption3 {
+    	padding-bottom: 70px;
+    }
+    
+    .carousel-caption h1 {
+    	font-size: 46px;
+    	text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    
+    div.loginDiv {
+    	position: absolute;
+    	width: 300px;
+    	right: 5%;
+    	top: 200px;
+    	border: 1px solid grey;
+    	border-radius: 25px;
+    	padding: 0px 20px 20px 20px;
+    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    	/*box-shadow: 0 0 38px rgba(0, 0, 0, 0.7)*/
+    	background: rgba(243, 243, 243, 0.7);
+	}	
+	button.signInButton {
+		width: 90%;
+		padding: 0px;
+	}
+	form.form-signin {
+	}
+	div.signInButtonContainer {
+		padding: 0px;
+	}
+	.btn-success {
+		background-color: #4caf50;
+	}
+
+	.lighter {
+		background-color: #2196f3;
+	}
+	.btn {
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4)
+	}
+	.alertShorter {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: #ff6363;
+	}
+	
+	.backgroundLogin {
+		padding: 0px;
+		margin: 0px;
+		background-color: #eef0f8;
+		/*background: url("../share/webbglight4.jpg") no-repeat center center fixed; 
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	     background-size: cover;*/
+	}
+	
+	div.loginBox {
+		margin-top: 40px;
+    	border: 1px solid grey;
+    	border-radius: 25px;
+    	padding: 0px 20px 20px 20px;
+    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    	/*box-shadow: 0 0 38px rgba(0, 0, 0, 0.7)*/
+    	background: rgba(243, 243, 243, 0.7);
+	}	
+	
+	.modal-dialog.customModal {
+		width: 500px;
+	}	
+	
+	.modal-body.maxHeight {
+		height: 280px;
+	}
+	
+	.person_title {
+		margin-top: 10px;
+	}
+	.person_title>b {
+		color: #252525;
+	}
+	
+	.featurette-divider {
+		margin: 30px 0;
+	}
+	
+	.aboutDescription.p, .aboutDescription.ul {
+		font-size: 15px;
+	}
+
+
+
+    @media all and (max-width: 800px) {
+	    body {
+	    }
+	    div.loginDiv {
+	    	position: relative;
+	    	top: 0px;
+	    	right: 0px;
+	    	margin: 10px auto 20px auto;
+	    }
+	    .carousel {
+	    	margin-bottom: 10px;
+	    }
+	    .carousel-caption {
+    	left: 10%;
+    	right: 10%;
+    	font-size: 20px;
+    	padding-bottom: 40px;
+    	text-shadow: black 0.1em 0.1em 0.2em;
+    	}
+	}
+	
+	

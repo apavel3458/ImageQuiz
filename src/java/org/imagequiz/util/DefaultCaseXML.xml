@@ -1,0 +1,23 @@
+<case>
+<case-text>
+Question stem here
+{question:mcq1}
+</case-text>
+
+<answer-text>
+Question stem here (for reference)
+{answer:mcq1}
+Answer text here
+{image:17} - delete if no images
+</answer-text>
+
+<settings>
+    <question id="mcq1" type="choice" selections="1" pass-score="1" wrong-choice-score="0">
+        <question-text>Question text here??</question-text>
+        <choice score="+1" correct="1">Choice A</choice>
+        <choice score="+0" correct="0">Choice B</choice>
+        <choice score="+0" correct="0">Choice C</choice>
+        <choice score="+0" correct="0">Choice D</choice>
+    </question>
+</settings>
+</case>

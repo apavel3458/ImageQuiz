@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.revisionDetailContainer {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.deleted {
+	text-decoration: line-through;
+}
+.new {
+	color: red;
+}

@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+table.radioButtonTable {
+	text-align: center; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+table.radioButtonTable th {
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+table.radioButtonTable td.tableLabel {
+}
+
+	
+	
+	
+	body.register {
+		padding: 0px;
+		padding-bottom: 100px;
+		
+		margin: 0px;
+		text-align: center;
+		color: #353535;
+			background-color: #5080FA;
+		background: url("../share/webbglight4b.jpg") no-repeat center center fixed; 
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	     background-size: cover;
+	}	
+	
+	div.centerPosition {
+    	margin: 100px auto;
+    	text-align: left;
+	}
+	
+	.registerGroup {
+		margin-top: 25px;
+	}
+	
+	.registerGroup label {
+		line-height: 13px;
+		font-size: 14px;
+	}
+	.registerGroup .inputDiv {
+		margin-left: 20px;
+		margin-right: 40px;
+	}
+	.registerInput {
+		/*height: 27px;*/
+	}
+	
+	
+	div.welcomeChoice {
+		padding-bottom: 10px;
+	}
+	
+	div.welcomeChoice > div.panel-body {
+		padding-top: 20px;
+	}
+	
+	.modal-header {
+		padding-bottom: 0px;
+	}
+	
+	label.inputMessage {
+		font-size: 11px;
+		margin-top: 2px;
+		display: block;
+	}
+	
+	.alertStyle {
+		/*margin: 20px auto;*/
+		/*top: 30px;
+		position: absolute;*/
+		background-color: #c51d23;
+		padding: 5px;
+	}
+	
+	.note {
+		line-height: normal;
+		font-size: 11px;
+	}

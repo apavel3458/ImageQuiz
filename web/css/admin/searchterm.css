@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+
+.group-name-warning {
+	color: #be0107;
+	font-weight: bold;
+}
+
+.modal-title {
+	border-bottom: 1px solid #d2d1d3;
+}
+
+.container {
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+}
+
+.sectionItem {
+	padding-left: 5px;
+	padding-right: 5px;
+	float:left;
+	width: 300px;
+}
+
+input.newSectionInput.form-control {
+	color: white;
+	height: 22px;
+	font-size: 15px;
+	box-shadow: none;
+}
+a.newSectionButton {
+	background-color: #ffba54;
+}
+
+div.noGroupAlert {
+	background-color: #bceabc;
+}
+
+.form-control.newSectionInput::-webkit-input-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput:-moz-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput::-moz-placeholder { text-align: center; color: #f6e0ca; }
+.form-control.newSectionInput:-ms-input-placeholder { text-align: center; color: #f6e0ca; }
+
+div.panel-heading {
+	padding-bottom: 0px;
+	height: 35px;
+	overflow: hidden;
+}
+
+span.sectionTrash {
+	font-size: 12px; 
+	color: black;
+	cursor: pointer;
+	color: #e0e3e7;
+}
+span.sectionTrash:hover {
+	color: #ff8187;
+}
+
+.searchTermItem.btn {
+	/*background-color: #9d81ff;*/
+	text-transform: none;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 222px;	
+}
+/*.itemDivContainer {
+	width: 235px;
+	overflow: hidden;
+	display: inline;
+}*/
+
+.searchTermItemInput.btn {
+	background-color: #f3e8ff;
+}
+
+.searchTermItemInput .newTermInput {
+	height: 15px;
+	font-size: 12px;
+	width: 200px
+}
+
+.form-control.newTermInput::-webkit-input-placeholder { text-align: center;}
+.form-control.newTermInput:-moz-placeholder { text-align: center;}
+.form-control.newTermInput::-moz-placeholder { text-align: center;}
+.form-control.newTermInput:-ms-input-placeholder { text-align: center;}
+
+.addTermButton span {
+	color: #767577;
+}
+.form-control.nounderline:focus {  
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.form-control.nounderline {  
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+input.normalField {
+	border: 1px solid #cac9cb !important;
+}
+.highlightBackground {
+	background-color: #f0fbff;
+}
+
+.searchTermItem.btn.selected {
+	background-color: #9c27b0;
+}
+
+
+
+
+/* AUTOCOMPLETE CSS */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-state-active.ui-button:hover 
+{
+  text-decoration: none;
+  width: 100%;
+  background-color: #c8dffe;
+}
+.ui-menu .ui-menu-item-wrapper {
+	width: 100%;
+	display: block;
+	white-space: nowrap;
+}
+.alertShorter {
+	padding-bottom:5px;
+	padding-top: 5px;
+}
